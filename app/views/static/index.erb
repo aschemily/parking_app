@@ -1,18 +1,21 @@
-<div id="home">
-<h1>ParkNow</h1>
+<div id="home" class="container">
+  <div class="row align-items-center h-100">
+  <div class="mx-auto">
+    <h1 class="display-1">ParkNow</h1>
 
 
-<%= button_to "New Spot", new_parkingspot_path, :id => "open-contacts-dialog-btn",
-        :class => "inbox-sf-add-btn tip", :method => :get %>
+      <%= button_to "New Spot", new_parkingspot_path, :id => "open-contacts-dialog-btn",
+              :method => :get, class: 'btn btn-primary' %>
 
 
-<%= button_to "Parking Spots", parkingspots_path, :id => "open-contacts-dialog-btn",
-            :class => "inbox-sf-add-btn tip", :method => :get %>
+      <%= button_to "Parking Spots", parkingspots_path, :id => "open-contacts-dialog-btn",
+                   :method => :get, class: 'btn btn-primary' %>
 
 
-<%= button_to "Available Parking Spots", available_path, :id => "open-contacts-dialog-btn",
-          :class => "inbox-sf-add-btn tip", :method => :get %>
+      <%= button_to "Available Parking Spots", available_path, :id => "open-contacts-dialog-btn",
+                 :method => :get, class: 'btn btn-primary' %>
 
 
-
+      </div>
+    </div>
   </div>

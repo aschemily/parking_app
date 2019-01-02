@@ -16,7 +16,8 @@
   <%= f.label :car_type %>:
   <%= f.select :car_type, options_for_select(["SUV", "Sedan", "Smart Car"]) %><br />
 
-  <%= f.fields_for :statuses do |status| %>
+  <%= f.fields_for :statuses_attributes do |status| %>
+
   <%= status.label :status %>
   <%= status.select :status, options_for_select(["Available", "Occupied"]) %><br />
 

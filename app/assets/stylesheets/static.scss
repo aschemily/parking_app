@@ -1,6 +1,17 @@
 // Place all the styles related to the static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#home{
-  background-image: image('carl-solder-528908');
+html {
+  margin: 0;
+  padding: 0;
+  background-image: url('background-img.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
 }
+//
+// .full-height {
+//   height: 100vh;
+//   height: calc(var(--vw, 1vh) * 100)
+// }

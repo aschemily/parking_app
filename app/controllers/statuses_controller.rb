@@ -1,22 +1,17 @@
 class StatusesController < ApplicationController
 
 def status
-@parkingspots = Parkingspot.all
 @status = Status.find(params[:id])
 
-if @status.status == "available"
-  render :available
-elsif @status.status == "occupied"
-  render :occupied
-else
-  redirect_to parkingspots_path
-end
+  if @status.status == "Available"
+      render :available
+        elsif @status.status == "Occupied"
+        render :occupied
+      else
+    redirect_to parkingspots_path
+  end
 
 end
 
 
-
-
-
-
-end
+end #end of status controller
