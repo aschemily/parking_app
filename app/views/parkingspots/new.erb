@@ -1,0 +1,25 @@
+<h1>New Parking Spot </h1>
+
+<%= form_for @parkingspot do |f| %>
+  <%= f.label :street_address %>:
+  <%= f.text_field :street_address %><br />
+
+  <%= f.label :city %>:
+  <%= f.text_field :city %><br />
+
+  <%= f.label :state %>:
+  <%= f.text_field :state %><br />
+
+  <%= f.label :zipcode %>:
+  <%= f.number_field :zipcode %><br />
+
+  <%= f.label :car_type %>:
+  <%= f.select :car_type, options_for_select(["SUV", "Sedan", "Smart Car"]) %><br />
+
+  <%= f.fields_for :statuses do |status| %>
+  <%= status.label :status %>
+  <%= status.select :status, options_for_select(["Available", "Occupied"]) %><br />
+
+  <% end %>
+  <%= f.submit %>
+<% end %>

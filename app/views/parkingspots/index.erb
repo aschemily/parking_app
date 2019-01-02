@@ -1,0 +1,9 @@
+<h1>Parking Spots</h1>
+
+<% @parkingspots.each do |parkingspot| %>
+<%= link_to "#{parkingspot.street_address}," + " " + "#{parkingspot.city}", parkingspot_path(parkingspot)  %><br />
+<% end %>
+
+
+<%= button_to "Park", occupied_path, :id => "open-contacts-dialog-btn",
+            :class => "inbox-sf-add-btn tip", :method => :get %>
