@@ -1,13 +1,26 @@
 <h1>Parking Spots</h1>
 
 <% @parkingspots.each do |parkingspot| %>
-<%=  "#{parkingspot.street_address}," + " " + "#{parkingspot.city}" %><br />
-<% end %>
 
+<label>Street Address:</label>
+<%=  parkingspot.street_address %><br />
 
-<%= button_to "Available Spots", available_path, :id => "open-contacts-dialog-btn",
-            :class => "inbox-sf-add-btn tip", :method => :get %>
+<label>City:</label>
+<%=  parkingspot.city %><br />
 
+<label>State:</label>
+<%=  parkingspot.state %><br />
 
-<%= button_to "Occupied Spots", occupied_path, :id => "open-contacts-dialog-btn",
-              :class => "inbox-sf-add-btn tip", :method => :get %>
+<label>Neighborhood:</label>
+<%=  parkingspot.neighborhood.neighborhood %><br />
+
+<label>Parking Size:</label>
+<%=  parkingspot.car_type %><br />
+
+<label>Status:</label>
+<%=  parkingspot.status %><br />
+
+<%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get" %>
+<% end %><br />
+
+<%= button_to "Home", '/', method:"get" %>

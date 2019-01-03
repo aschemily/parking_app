@@ -10,14 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_02_011114) do
+ActiveRecord::Schema.define(version: 2019_01_02_223246) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "neighborhoods", force: :cascade do |t|
+    t.string "neighborhood"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "category_id"
+  end
 
   create_table "parkingspots", force: :cascade do |t|
     t.string "street_address"
     t.string "city"
-    t.integer "zipcode"
+    t.string "zipcode"
     t.string "state"
     t.string "car_type"
+    t.string "status"
+    t.integer "neighborhood_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

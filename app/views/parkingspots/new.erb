@@ -1,5 +1,14 @@
 <h1>New Parking Spot </h1>
 
+<ul>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+    <li> <%= error %> </li>
+    <% end %>
+  <% end%>
+</ul>
+
+
 <%= form_for @parkingspot do |f| %>
   <%= f.label :street_address %>:
   <%= f.text_field :street_address %><br />
@@ -13,14 +22,14 @@
   <%= f.label :zipcode %>:
   <%= f.number_field :zipcode %><br />
 
-  <%= f.label :car_type %>:
+  <%= f.label :car_type, 'Parking Size:' %>:
   <%= f.select :car_type, options_for_select(["SUV", "Sedan", "Smart Car"]) %><br />
 
-  <%= f.fields_for :statuses_attributes do |status| %>
+  <%= f.label :status %>
+  <%= f.select :status, options_for_select(["Available", "Occupied"]) %><br />
 
-  <%= status.label :status %>
-  <%= status.select :status, options_for_select(["Available", "Occupied"]) %><br />
+  <%= f.label :neighborhood, 'Please select a neighborhood below:' %>
+  <%= f.collection_select :neighborhood_id, @neighborhoods, :id, :neighborhood %><br />
 
-  <% end %>
-  <%= f.submit %>
+  <%= f.submit %><br />
 <% end %>

@@ -1,20 +1,19 @@
 <div id="home" class="container">
   <div class="row align-items-center h-100">
   <div class="mx-auto">
+
     <h1 class="display-1">ParkNow</h1>
 
 
-      <%= button_to "New Spot", new_parkingspot_path, :id => "open-contacts-dialog-btn",
-              :method => :get, class: 'btn btn-primary' %>
+      <%= button_to "New Spot", new_parkingspot_path, method:"get" %>
 
+      <%= button_to "Look for parking by neighborhood", neighborhoods_path, method:"get" %>
 
-      <%= button_to "Parking Spots", parkingspots_path, :id => "open-contacts-dialog-btn",
-                   :method => :get, class: 'btn btn-primary' %>
+      <%= button_to "All Parking Spots", parkingspots_path, method:"get" %>
 
+      <%= button_to "Available Parking", available_path, method:"get" %>
 
-      <%= button_to "Available Parking Spots", available_path, :id => "open-contacts-dialog-btn",
-                 :method => :get, class: 'btn btn-primary' %>
-
+      <%= button_to "Occupied Parking", occupied_path, method:"get" %>
 
       </div>
     </div>

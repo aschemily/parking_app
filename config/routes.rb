@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get '/available', to:'status#status'
-  get '/occupied', to:'status#status'
+  resources :neighborhoods, only:[:index, :show]
 
-  resources :parkingspots, only:[:index, :new, :create, :show]
+  resources :parkingspots, only:[:index, :show,:new,:create]
+
+  get '/available', to:'parkingspots#available'
+  get '/occupied', to:'parkingspots#occupied'
+  get 'park/:id/status', to:'parkingspots#status', as:'status'
 
   get '/', to:'static#index'
 

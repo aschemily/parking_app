@@ -1,1 +1,23 @@
+<h1>Parking Address </h1>
+<label>Street Address:</label>
+<%= @parkingspot.street_address %><br />
+<label>City:</label>
+<%=  @parkingspot.city%><br />
+<label>State:</label>
+<%=  @parkingspot.state%><br />
+<label>Zipcode:</label>
+<%=  @parkingspot.zipcode%><br />
+<label>Parking Size:</label>
+<%=  @parkingspot.car_type%><br />
+<label>Status:</label>
 <%= @parkingspot.status %>
+
+<% if @parkingspot.status == "Available" %>
+  <%= button_to "Park", status_path, method:"get" %>
+<% else %>
+  <%= button_to "Leave", status_path, method:"get" %>
+<% end %>
+
+
+<%= button_to "All Parking Spots", parkingspots_path, method:"get" %>
+<%= button_to "Home", '/', method:"get" %>

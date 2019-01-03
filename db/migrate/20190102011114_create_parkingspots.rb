@@ -6,6 +6,8 @@ class CreateParkingspots < ActiveRecord::Migration[5.2]
     t.integer :zipcode
     t.string :state
     t.string :car_type
+    t.string :status
+    t.integer :neighborhood_id
 
       t.timestamps
     end

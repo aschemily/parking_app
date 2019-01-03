@@ -1,0 +1,26 @@
+<h1>Occupied Parking </h1>
+
+<% @parkingspots.each do |parkingspot| %>
+<label>Street Address:</label>
+<%=  parkingspot.street_address %><br />
+
+<label>City:</label>
+<%=  parkingspot.city %><br />
+
+<label>State:</label>
+<%=  parkingspot.state %><br />
+
+<label>Neighborhood:</label>
+<%=  parkingspot.neighborhood.neighborhood %><br />
+
+<label>Parking Size:</label>
+<%=  parkingspot.car_type %><br />
+
+<label>Status:</label>
+<%=  parkingspot.status %><br />
+
+
+<%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get" %>
+<% end %>
+
+<%= button_to "Home", '/', method:"get" %>
