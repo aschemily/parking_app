@@ -5,12 +5,64 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  </head>
+        <!-- Bootstrap CSS CDN -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+   <!-- Our Custom CSS -->
+   <link rel="stylesheet" href="style.css">
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
 
   <body>
-    <%= yield %>
-  </body>
-</html>
+
+    <nav class="navbar navbar-default" role="navigation">
+	    <div class="container">
+		    <div class="navbar-header">
+			    <a id="menu-toggle" href="#" class="navbar-toggle">
+					  <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			</a>
+  			<a class="navbar-brand" href=<%= home_path %>>
+  				ParkNow
+  			</a>
+		</div>
+		<div id="sidebar-wrapper" class="sidebar-toggle">
+			<ul class="sidebar-nav">
+		    	<li>
+		      		<a href=<%= home_path %>>Home</a>
+		    	</li>
+		    	<li>
+		      		<a href=<%= new_parkingspot_path %>> New Spot</a>
+		    	</li>
+		    	<li>
+		      		<a href=<%= neighborhoods_path %>>Parking by neighborhood</a>
+		    	</li>
+          <li>
+              <a href=<%= parkingspots_path%>>All Parking Spots</a>
+          </li>
+          <li>
+              <a href=<%= available_path%>>Available Parking</a>
+          </li>
+          <li>
+              <a href=<%= occupied_path%>>Occupied Parking</a>
+          </li>
+		  	</ul>
+		  </div>
+  	</div>
+</nav>
+
+
+
+<%= yield %>
+</body>
+
+  </html>

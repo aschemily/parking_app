@@ -1,35 +1,51 @@
 <h1>New Parking Spot </h1>
 
-<ul>
-  <% if @errors %>
-    <% @errors.each do |error| %>
-    <li> <%= error %> </li>
-    <% end %>
-  <% end%>
-</ul>
+<% if @errors %>
+  <div id="error_explanation">
+          <ul>
+            <% @errors.each do |error| %>
+          <li> * <%= error %> </li>
+        <% end %>
+      <% end%>
+    </ul>
+  </div>
 
 
-<%= form_for @parkingspot do |f| %>
-  <%= f.label :street_address %>:
-  <%= f.text_field :street_address %><br />
 
-  <%= f.label :city %>:
-  <%= f.text_field :city %><br />
+  <div class="container">
 
-  <%= f.label :state %>:
-  <%= f.text_field :state %><br />
+  <%= form_for @parkingspot do |f| %>
 
-  <%= f.label :zipcode %>:
-  <%= f.number_field :zipcode %><br />
 
-  <%= f.label :car_type, 'Parking Size:' %>:
-  <%= f.select :car_type, options_for_select(["SUV", "Sedan", "Smart Car"]) %><br />
+    <div class="labels"><%= f.label :street_address %>:</div>
+    <div class="boxes"> <%= f.text_field :street_address%></div><br />
 
-  <%= f.label :status %>
-  <%= f.select :status, options_for_select(["Available", "Occupied"]) %><br />
 
-  <%= f.label :neighborhood, 'Please select a neighborhood below:' %>
-  <%= f.collection_select :neighborhood_id, @neighborhoods, :id, :neighborhood %><br />
+    <div class="labels"><%= f.label :city %>:</div>
+    <%= f.text_field :city, :class=>"span5"  %><br />
 
-  <%= f.submit %><br />
-<% end %>
+  <div class="labels">  <%= f.label :state %>:</div>
+    <%= f.text_field :state, :class=>"span5"  %><br />
+
+    <div class="labels"><%= f.label :zipcode %>:</div>
+    <%= f.number_field :zipcode, :class=>"span5"  %><br />
+
+    <div class="labels"><%= f.label :car_type, 'Parking Size' %>:</div>
+      <%= f.select :car_type, options_for_select(["SUV", "Sedan", "Smart Car"]),{class: "form-control"} %>
+    <br />
+
+    <div class="labels"><%= f.label :status %></div>
+
+    <%= f.select :status, options_for_select(["Available", "Occupied"]),{class: "form-control"}%><br />
+
+    <div class="labels">  <%= f.label :neighborhood, 'Please select a neighborhood below:' %></div>
+
+    <%= f.collection_select :neighborhood_id, @neighborhoods, :id, :neighborhood, {class: "form-control"}%><br />
+
+    <%= f.submit %><br />
+  <% end %>
+
+</div>
+
+
+  </div>

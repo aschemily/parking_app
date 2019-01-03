@@ -1,10 +1,14 @@
 <div class="header"><h1>Neighborhoods </h1> </div>
 
-<div class="row">
-  <% @neighborhoods.each do |neighborhood| %>
-  <%= link_to neighborhood.neighborhood, neighborhood_path(neighborhood), class:"extractneighborhood" %><br />
-  <% end %>
+<div class="container">
+  <div class="row">
+    <% @neighborhoods.each do |neighborhood| %>
+      <div class="col-sm">
+        <%= link_to neighborhood.neighborhood, neighborhood_path(neighborhood), class:"extractneighborhood" %>
+      </div>
+    <% end %>
   </div>
+</div>
 
 
 <%= button_to "Home", '/', method:"get" %>
