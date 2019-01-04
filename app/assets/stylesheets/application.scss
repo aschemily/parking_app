@@ -32,36 +32,66 @@
   color: white;
   font-size: 60px;
   text-shadow: 2px 2px black;
+
+}
+body{
+  background-color: #f9f9f8;
 }
 h1{
   text-align: center;
+
+}
+.btn-primary{
+  background-color: #3e95c6;
 }
 
-#error_explanation{
-  color: #f00;
-  ul {
-   list-style: none;
-   margin: 0 0 18px 0;
-   text-align: center;
+.btn-secondary{
+  background-color: #91b4c3;
 
-  }
 }
 
-.form{
-  background-image: url('second.jpg');
+
+#form{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.labels{
+
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
 }
 
 .form-group{
   margin: auto;
   width: 50%;
   padding: 10px;
-  border: 2px solid black;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1f202e;
 
 }
 
+.error_explanation{
+  color: #f00;
+  ul {
+   list-style: none;
+   margin: 0 0 18px 0;
+   text-align: center;
+  }
+}
 
 input{
   width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 3px solid #7f7178;
 
 }
 // #display-3{
@@ -79,8 +109,8 @@ input{
     .card {
       border: 2px solid #e7e7e7;
       border-radius: 4px;
-      padding: .5rem;
-      background-image: url('body.jpg');
+      background-color:3px solid #91b4c3;
+      // padding: .5rem;
     }
       .card-img-top {
         height: 200px;
@@ -88,20 +118,24 @@ input{
     }
   }
 
-@media (min-width: 576px) {
-.parking-card{
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 1rem;
-  flex-direction: column;
-  margin-bottom: 0;
-  .card-body{
-    border: 2px solid #e7e7e7;
-    border-radius: 4px;
-    padding: .5rem;
-    border-color: black;
+// @media (min-width: 576px) {
+// .parking-card{
+//   display: grid;
+//   grid-template-columns: auto auto auto auto;
+//   grid-gap: 1rem;
+//   flex-direction: column;
+//   margin-bottom: 0;
+//   .card-body{
+//     border: 2px solid #e7e7e7;
+//     border-radius: 4px;
+//     padding: .5rem;
+//     border-color: black;
+//
+//   }
+// }
+//
+// }
 
-  }
-}
-
+.show-page{
+  text-align: center;
 }

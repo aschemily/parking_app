@@ -1,9 +1,10 @@
 <h1>New Parking Spot </h1>
+<div id="form">
 
-<div class="form">
+
 
 <% if @errors %>
-  <div id="error_explanation">
+  <div class="error_explanation">
           <ul>
             <% @errors.each do |error| %>
           <li> * <%= error %> </li>
@@ -19,7 +20,7 @@
       <%= form_for @parkingspot do |f| %>
 
 
-        <div class="col-2 col-form-label"><%= f.label :street_address %>:</div>
+        <div class="labels"><%= f.label :street_address %>:</div>
         <div class="labels"> <%= f.text_field :street_address%></div><br />
 
 

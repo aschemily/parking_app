@@ -1,31 +1,39 @@
 <h1>Parking Address </h1>
 
+<div class="show-page">
+
+
 <div class="labels"> Street Address: </div>
-<div class="show-content"> <%= @parkingspot.street_address %></div><br />
+<div class="show-content"> <%= @parkingspot.street_address %></div></br>
 
 <div class="labels">City:</div>
-<div class="show-content"> <%=  @parkingspot.city%></div><br />
+<div class="show-content"> <%=  @parkingspot.city%></div></br>
 
 <div class="labels">State:</div>
-<div class="show-content"> <%= @parkingspot.state%></div><br />
+<div class="show-content"> <%= @parkingspot.state%></div></br>
 
 <div class="labels">Zipcode:</div>
-<div class="show-content"> <%=  @parkingspot.zipcode%></div><br />
+<div class="show-content"> <%=  @parkingspot.zipcode%></div></br>
 
 <div class="labels">Parking Size:</div>
-<div class="show-content"> <%=  @parkingspot.car_type%></div><br />
+<div class="show-content"> <%=  @parkingspot.car_type%></div></br>
+
+<div class="labels">Neighborhood:</div>
+<div class="show-content"> <%= @parkingspot.neighborhood.neighborhood%></div></br>
 
 <div class="labels">Status:</div>
 <div class="show-content"> <%= @parkingspot.status %></div>
 
 
 <% if @parkingspot.status == "Available" %>
-  <%= button_to "Park", status_path, method:"get" %>
+  <%= button_to "Park", status_path, method:"get", class:"btn btn-success" %>
 <% else %>
-  <%= button_to "Leave", status_path, method:"get"%>
+  <%= button_to "Leave", status_path, method:"get", class:"btn btn-danger"%>
 <% end %>
 
 
 
-<%= button_to "All Parking Spots", parkingspots_path, method:"get" %>
-<%= button_to "Home", '/', method:"get" %>
+<%= button_to "All Parking Spots", parkingspots_path, method:"get", class:"btn-secondary" %>
+<%= button_to "Home", '/', method:"get", class:"btn-secondary" %>
+
+</div>

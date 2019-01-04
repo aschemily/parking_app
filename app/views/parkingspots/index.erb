@@ -1,11 +1,11 @@
 <h1>Parking Spots</h1>
 
 
-<div class="parking-card" style="width: 18rem;">
+<div class="cards">
 
 
 <% @parkingspots.each do |parkingspot| %>
-  <div class="card-body">
+  <div class="card" style="width: 18rem;">
 
       <div class="card-title">Street Address:</div>
       <div class="card-subtitle"><%=  parkingspot.street_address %></div>
@@ -24,7 +24,7 @@
 
       <div class="card-title">Status:</div>
       <div class="card-subtitle"> <%=  parkingspot.status %></div>
-  <%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get", class:"btn btn-outline-secondary" %>
+  <%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get", class:"btn-secondary" %>
     </div>
 
     </div>
