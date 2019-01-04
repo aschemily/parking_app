@@ -2,21 +2,23 @@
   <!-- <div class="header"><h1>Neighborhoods </h1> </div> -->
   <h1 class="display-3">Neighborhoods</h1>
 
-  <div class="card-group ">
+  <div class="cards">
+
 
     <% @neighborhoods.each do |neighborhood| %>
-      <div class="card p-2 flex-column">
+    <div class="card" style="width: 18rem;">
 
-        <img src="<%=  neighborhood.img_url %>" class="card-img-top" alt="<%= neighborhood.neighborhood %>">
+      <img src="<%=  neighborhood.img_url %>" class="card-img-top" alt="<%= neighborhood.neighborhood %>">
 
-          <div class="card-body">
-            <h5 class="card-title"><%= neighborhood.neighborhood %></h5>
+      <div class="card-block">
+        <% neighborhood.neighborhood %>
 
           </div>
 
           <div class="card-footer">
-            <small><%= link_to neighborhood.neighborhood, neighborhood_path(neighborhood), class: "btn btn-primary"%></small>
-          </div>
+        <small><%= link_to neighborhood.neighborhood, neighborhood_path(neighborhood), class: "btn btn-primary"%></small>
+        </div>
+
 
       </div>
     <% end %>

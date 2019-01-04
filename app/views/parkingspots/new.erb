@@ -1,5 +1,7 @@
 <h1>New Parking Spot </h1>
 
+<div class="form">
+
 <% if @errors %>
   <div id="error_explanation">
           <ul>
@@ -12,40 +14,39 @@
 
 
 
-  <div class="form-group">
+      <div class="form-group">
 
-  <%= form_for @parkingspot do |f| %>
-
-
-    <div class="col-2 col-form-label"><%= f.label :street_address %>:</div>
-    <div class="labels"> <%= f.text_field :street_address%></div><br />
+      <%= form_for @parkingspot do |f| %>
 
 
-    <div class="labels"><%= f.label :city %>:</div>
-    <%= f.text_field :city, :class=>"span5"  %><br />
-
-  <div class="labels">  <%= f.label :state %>:</div>
-    <%= f.text_field :state, :class=>"span5"  %><br />
-
-    <div class="labels"><%= f.label :zipcode %>:</div>
-    <%= f.number_field :zipcode, :class=>"span5"  %><br />
-
-    <div class="labels"><%= f.label :car_type, 'Parking Size' %>:</div>
-      <%= f.select :car_type, options_for_select(["SUV", "Sedan", "Smart Car"]),{class: "form-control"} %>
-    <br />
-
-    <div class="labels"><%= f.label :status %></div>
-
-    <%= f.select :status, options_for_select(["Available", "Occupied"]),{class: "form-control"}%><br />
-
-    <div class="labels">  <%= f.label :neighborhood, 'Please select a neighborhood below:' %></div>
-
-    <%= f.collection_select :neighborhood_id, @neighborhoods, :id, :neighborhood, {class: "form-control"}%><br />
-
-    <%= f.submit class:"btn btn-primary" %><br />
-  <% end %>
-
-</div>
+        <div class="col-2 col-form-label"><%= f.label :street_address %>:</div>
+        <div class="labels"> <%= f.text_field :street_address%></div><br />
 
 
+        <div class="labels"><%= f.label :city %>:</div>
+        <%= f.text_field :city, :class=>"span5"  %><br />
+
+        <div class="labels">  <%= f.label :state %>:</div>
+        <%= f.text_field :state, :class=>"span5"  %><br />
+
+        <div class="labels"><%= f.label :zipcode %>:</div>
+        <%= f.number_field :zipcode, :class=>"span5"  %><br />
+
+        <div class="labels"><%= f.label :car_type, 'Parking Size' %>:</div>
+          <%= f.select :car_type, options_for_select(["SUV", "Sedan", "Smart Car"]),{class: "form-control"} %>
+        <br />
+
+        <div class="labels"><%= f.label :status %></div>
+
+        <%= f.select :status, options_for_select(["Available", "Occupied"]),{class: "form-control"}%><br />
+
+        <div class="labels">  <%= f.label :neighborhood, 'Please select a neighborhood below:' %></div>
+
+        <%= f.collection_select :neighborhood_id, @neighborhoods, :id, :neighborhood, {class: "form-control"}%><br />
+
+        <%= f.submit class:"btn btn-primary" %><br />
+        <% end %>
+
+      </div>
+    </div>
   </div>

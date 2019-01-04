@@ -31,7 +31,7 @@
   font-family: 'Permanent Marker', cursive;
   color: white;
   font-size: 60px;
-  text-shadow: 2px 2px #FF0000;
+  text-shadow: 2px 2px black;
 }
 h1{
   text-align: center;
@@ -47,17 +47,61 @@ h1{
   }
 }
 
-.new_form{
+.form{
+  background-image: url('second.jpg');
+}
+
+.form-group{
   margin: auto;
   width: 50%;
   padding: 10px;
+  border: 2px solid black;
+
 }
 
+
+input{
+  width: 100%;
+
+}
+// #display-3{
+//   background-image: url('body.jpg');
+// }
+
 @media (min-width: 576px) {
-  .card-group {
+  .cards{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 1rem;
+    flex-direction: column;
+    margin-bottom: 0;
+
     .card {
-      flex: 12 4 33%;
-      margin-bottom: 0;
+      border: 2px solid #e7e7e7;
+      border-radius: 4px;
+      padding: .5rem;
+      background-image: url('body.jpg');
+    }
+      .card-img-top {
+        height: 200px;
+      }
     }
   }
+
+@media (min-width: 576px) {
+.parking-card{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 1rem;
+  flex-direction: column;
+  margin-bottom: 0;
+  .card-body{
+    border: 2px solid #e7e7e7;
+    border-radius: 4px;
+    padding: .5rem;
+    border-color: black;
+
+  }
+}
+
 }

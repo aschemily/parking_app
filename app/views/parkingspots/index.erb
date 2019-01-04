@@ -1,24 +1,32 @@
 <h1>Parking Spots</h1>
 
 
-</div>
+<div class="parking-card" style="width: 18rem;">
 
 
 <% @parkingspots.each do |parkingspot| %>
-  <div class="card card-body">
-      <div class="card-subtitle">Street Address:<%=  parkingspot.street_address %></div>
+  <div class="card-body">
 
-      <div class="card-subtitle">City:<%=  parkingspot.city %></div>
+      <div class="card-title">Street Address:</div>
+      <div class="card-subtitle"><%=  parkingspot.street_address %></div>
 
-      <div class="card-subtitle">State:<%=  parkingspot.state %></div>
+      <div class="card-title">City:</div>
+      <div class="card-subtitle"><%=  parkingspot.city %></div>
 
-      <div class="card-subtitle">Neighborhood:<%=  parkingspot.neighborhood.neighborhood %></div>
+      <div class="card-title">State:</div>
+      <div class="card-subtitle"><%=  parkingspot.state %></div>
 
-      <div class="card-subtitle">Parking Size:<%=  parkingspot.car_type %></div>
+      <div class="card-title">Neighborhood:</div>
+      <div class="card-subtitle"> <%=  parkingspot.neighborhood.neighborhood %></div>
 
-      <div class="card-subtitle">Status:<%=  parkingspot.status %></div>
+      <div class="card-title">Parking Size:</div>
+      <div class="card-subtitle"><%=  parkingspot.car_type %></div>
 
-      <%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get" %>
+      <div class="card-title">Status:</div>
+      <div class="card-subtitle"> <%=  parkingspot.status %></div>
+  <%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get", class:"btn btn-outline-secondary" %>
+    </div>
+
     </div>
   <% end %>
 

@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #uptown
 # Category.destroy_all
- Neighborhood.destroy_all
+ #Neighborhood.destroy_all
 
-# Category.create(category:"Uptown Neighborhoods")
-# Category.create(category:"Midtown Neighborhoods")
-# Category.create(category:"Downtown Neighborhood")
+Category.create(category:"Uptown Neighborhoods")
+Category.create(category:"Midtown Neighborhoods")
+Category.create(category:"Downtown Neighborhood")
 
 
 Neighborhood.create(category_id: 1, neighborhood:"Morningside Heights", img_url: "https://untappedcities-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/Morningside-Heights-Guide-Untapped-Cities-Columbia-University-NYC.jpg")
