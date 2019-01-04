@@ -12,13 +12,13 @@
 
 
 
-  <div class="container">
+  <div class="form-group">
 
   <%= form_for @parkingspot do |f| %>
 
 
-    <div class="labels"><%= f.label :street_address %>:</div>
-    <div class="boxes"> <%= f.text_field :street_address%></div><br />
+    <div class="col-2 col-form-label"><%= f.label :street_address %>:</div>
+    <div class="labels"> <%= f.text_field :street_address%></div><br />
 
 
     <div class="labels"><%= f.label :city %>:</div>
@@ -42,7 +42,7 @@
 
     <%= f.collection_select :neighborhood_id, @neighborhoods, :id, :neighborhood, {class: "form-control"}%><br />
 
-    <%= f.submit %><br />
+    <%= f.submit class:"btn btn-primary" %><br />
   <% end %>
 
 </div>

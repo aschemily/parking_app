@@ -23,41 +23,23 @@
   <!------ Include the above in your HEAD tag ---------->
 
   <body>
-
-  <div class="pos-f-t">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h4 class="text-white">ParkNow</h4>
-
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href=<%= home_path %>>Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href=<%= new_parkingspot_path %>>New Spot</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href=<%= neighborhoods_path %>>Parking By Neighborhood</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href=<%= parkingspots_path%>>All Parking Spots</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href=<%= available_path%>>Available Parking</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href=<%= occupied_path%>>Occupied Parking</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href=<%= home_path %>>ParkNow</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href=<%= home_path %>>Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href=<%= new_parkingspot_path %>>New Spot</a>
+        <a class="nav-item nav-link" href=<%= neighborhoods_path %>>Parking By Neighborhood</a>
+        <a class="nav-item nav-link" href=<%= parkingspots_path%>>All Parking Spots</a>
+          <a class="nav-item nav-link" href=<%= available_path%>>Available Parking</a>
+            <a class="nav-item nav-link" href=<%= occupied_path%>>Occupied Parking</a>
+      </div>
+    </div>
+    </nav>
 
-  </nav>
 
   <%= yield %>
 </body>
