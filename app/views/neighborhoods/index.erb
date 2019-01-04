@@ -1,14 +1,26 @@
-<div class="header"><h1>Neighborhoods </h1> </div>
+<!-- <div class="container align-content-center"> -->
+  <!-- <div class="header"><h1>Neighborhoods </h1> </div> -->
+  <h1 class="display-3">Neighborhoods</h1>
 
-<div class="container">
-  <div class="row">
+  <div class="card-group ">
+
     <% @neighborhoods.each do |neighborhood| %>
-      <div class="col-sm">
-        <%= link_to neighborhood.neighborhood, neighborhood_path(neighborhood), class:"extractneighborhood" %>
+      <div class="card p-2 flex-column">
+
+        <img src="<%=  neighborhood.img_url %>" class="card-img-top" alt="<%= neighborhood.neighborhood %>">
+
+          <div class="card-body">
+            <h5 class="card-title"><%= neighborhood.neighborhood %></h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+
+          <div class="card-footer">
+            <small class="text-muted"><%= link_to neighborhood.neighborhood, neighborhood_path(neighborhood), class: 'card-link'%></small>
+          </div>
+
       </div>
     <% end %>
+
   </div>
-</div>
-
-
-<%= button_to "Home", '/', method:"get" %>
+<!--<%# <%= button_to "Home", '/', method:"get" %> %>-->
+<!-- </div> -->

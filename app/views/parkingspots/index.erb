@@ -1,26 +1,26 @@
 <h1>Parking Spots</h1>
 
+
+</div>
+
+
 <% @parkingspots.each do |parkingspot| %>
+  <div class="card card-body">
+      <div class="card-subtitle">Street Address:<%=  parkingspot.street_address %></div>
 
-<label>Street Address:</label>
-<%=  parkingspot.street_address %><br />
+      <div class="card-subtitle">City:<%=  parkingspot.city %></div>
 
-<label>City:</label>
-<%=  parkingspot.city %><br />
+      <div class="card-subtitle">State:<%=  parkingspot.state %></div>
 
-<label>State:</label>
-<%=  parkingspot.state %><br />
+      <div class="card-subtitle">Neighborhood:<%=  parkingspot.neighborhood.neighborhood %></div>
 
-<label>Neighborhood:</label>
-<%=  parkingspot.neighborhood.neighborhood %><br />
+      <div class="card-subtitle">Parking Size:<%=  parkingspot.car_type %></div>
 
-<label>Parking Size:</label>
-<%=  parkingspot.car_type %><br />
+      <div class="card-subtitle">Status:<%=  parkingspot.status %></div>
 
-<label>Status:</label>
-<%=  parkingspot.status %><br />
+      <%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get" %>
+    </div>
+  <% end %>
 
-<%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get" %>
-<% end %><br />
 
-<%= button_to "Home", '/', method:"get" %>
+  <%# <%= button_to "Home", '/', method:"get" %> %>

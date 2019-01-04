@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>ParkingApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,59 +11,55 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
         <!-- Bootstrap CSS CDN -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
 
    <!-- Our Custom CSS -->
    <link rel="stylesheet" href="style.css">
 
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> -->
   <!------ Include the above in your HEAD tag ---------->
 
   <body>
 
-    <nav class="navbar navbar-default" role="navigation">
-	    <div class="container">
-		    <div class="navbar-header">
-			    <a id="menu-toggle" href="#" class="navbar-toggle">
-					  <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			</a>
-  			<a class="navbar-brand" href=<%= home_path %>>
-  				ParkNow
-  			</a>
-		</div>
-		<div id="sidebar-wrapper" class="sidebar-toggle">
-			<ul class="sidebar-nav">
-		    	<li>
-		      		<a href=<%= home_path %>>Home</a>
-		    	</li>
-		    	<li>
-		      		<a href=<%= new_parkingspot_path %>> New Spot</a>
-		    	</li>
-		    	<li>
-		      		<a href=<%= neighborhoods_path %>>Parking by neighborhood</a>
-		    	</li>
-          <li>
-              <a href=<%= parkingspots_path%>>All Parking Spots</a>
-          </li>
-          <li>
-              <a href=<%= available_path%>>Available Parking</a>
-          </li>
-          <li>
-              <a href=<%= occupied_path%>>Occupied Parking</a>
-          </li>
-		  	</ul>
-		  </div>
-  	</div>
-</nav>
+  <div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">ParkNow</h4>
 
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href=<%= home_path %>>Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=<%= new_parkingspot_path %>>New Spot</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=<%= neighborhoods_path %>>Parking By Neighborhood</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=<%= parkingspots_path%>>All Parking Spots</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=<%= available_path%>>Available Parking</a>
+        </li>
 
+        <li class="nav-item">
+          <a class="nav-link" href=<%= occupied_path%>>Occupied Parking</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<%= yield %>
+  </nav>
+
+  <%= yield %>
 </body>
 
   </html>
