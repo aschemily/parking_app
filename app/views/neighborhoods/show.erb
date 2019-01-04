@@ -1,30 +1,31 @@
 <h1><%= @neighborhood.neighborhood %></h1>
-
 <h3>Parking Spots: </h3>
+
+<div class="show-cards">
+
 <% @neighborhood.parkingspots.each do |parkingspot|%>
-<label>Street Address:</label>
-<%=  parkingspot.street_address %><br />
 
-<label>City:</label>
-<%=  parkingspot.city %><br />
+  <div class="show-card" style="width: 18rem;">
 
-<label>State:</label>
-<%=  parkingspot.state %><br />
+  <div class="card-title">Street Address:</div>
+  <div class="card-subtitle"><%=  parkingspot.street_address %></div>
 
-<label>Neighborhood:</label>
-<%=  parkingspot.neighborhood.neighborhood %><br />
+  <div class="card-title">City:</div>
+  <div class="card-subtitle"><%=  parkingspot.city %></div>
 
-<label>Parking Size:</label>
-<%=  parkingspot.car_type %><br />
+  <div class="card-title">State:</div>
+  <div class="card-subtitle"><%=  parkingspot.state %></div>
 
-<label>Status:</label>
-<%=  parkingspot.status %><br />
+  <div class="card-title">Neighborhood:</div>
+  <div class="card-subtitle"> <%=  parkingspot.neighborhood.neighborhood %></div>
 
-<%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get" %>
+  <div class="card-title">Parking Size:</div>
+  <div class="card-subtitle"><%=  parkingspot.car_type %></div>
 
-<% end %><br />
+  <div class="card-title">Status:</div>
+  <div class="card-subtitle"> <%=  parkingspot.status %></div>
 
 
-<%= button_to "Neighborhoods", neighborhoods_path, method:"get" %>
-<%= button_to "All Parking Spots", parkingspots_path, method:"get" %>
-<%= button_to "Home", '/', method:"get" %>
+<%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get", class:"btn-secondary btn-sm" %>
+<% end %>
+</div>

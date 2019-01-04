@@ -34,16 +34,16 @@
         <%= f.number_field :zipcode, :class=>"span5"  %><br />
 
         <div class="labels"><%= f.label :car_type, 'Parking Size' %>:</div>
-          <%= f.select :car_type, options_for_select(["SUV", "Sedan", "Smart Car"]),{class: "form-control"} %>
+          <%= f.select :car_type, options_for_select(["SUV", "Sedan", "Smart Car"])%>
         <br />
 
         <div class="labels"><%= f.label :status %></div>
 
-        <%= f.select :status, options_for_select(["Available", "Occupied"]),{class: "form-control"}%><br />
+        <%= f.select :status, options_for_select(["Available", "Occupied"])%><br />
 
         <div class="labels">  <%= f.label :neighborhood, 'Please select a neighborhood below:' %></div>
 
-        <%= f.collection_select :neighborhood_id, @neighborhoods, :id, :neighborhood, {class: "form-control"}%><br />
+        <%= f.collection_select :neighborhood_id, @neighborhoods, :id, :neighborhood%><br />
 
         <%= f.submit class:"btn btn-primary" %><br />
         <% end %>

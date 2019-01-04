@@ -1,26 +1,32 @@
 <h1>Occupied Parking </h1>
 
+<div class="show-cards">
+
 <% @parkingspots.each do |parkingspot| %>
-<label>Street Address:</label>
-<%=  parkingspot.street_address %><br />
+<div class="show-card" style="width: 18rem;">
 
-<label>City:</label>
-<%=  parkingspot.city %><br />
+  <div class="card-title">Street Address:</div>
+  <div class="card-subtitle"><%=  parkingspot.street_address %></div>
 
-<label>State:</label>
-<%=  parkingspot.state %><br />
+  <div class="card-title">City:</div>
+  <div class="card-subtitle"><%=  parkingspot.city %></div>
 
-<label>Neighborhood:</label>
-<%=  parkingspot.neighborhood.neighborhood %><br />
+  <div class="card-title">State:</div>
+  <div class="card-subtitle"><%=  parkingspot.state %></div>
 
-<label>Parking Size:</label>
-<%=  parkingspot.car_type %><br />
+  <div class="card-title">Neighborhood:</div>
+  <div class="card-subtitle"> <%=  parkingspot.neighborhood.neighborhood %></div>
 
-<label>Status:</label>
-<%=  parkingspot.status %><br />
+  <div class="card-title">Parking Size:</div>
+  <div class="card-subtitle"><%=  parkingspot.car_type %></div>
+
+  <div class="card-title">Status:</div>
+  <div class="card-subtitle"> <%=  parkingspot.status %></div>
 
 
-<%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get" %>
+<%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get", class:"btn-secondary btn-sm" %>
 <% end %>
 
-<%= button_to "Home", '/', method:"get" %>
+
+</div>
+</div>

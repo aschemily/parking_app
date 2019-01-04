@@ -1,6 +1,7 @@
 <h1>Parking Address </h1>
 
-<div class="show-page">
+<div id="show-page">
+
 
 
 <div class="labels"> Street Address: </div>
@@ -26,14 +27,13 @@
 
 
 <% if @parkingspot.status == "Available" %>
-  <%= button_to "Park", status_path, method:"get", class:"btn btn-success" %>
+  <%= button_to "Park", status_path, method:"get", class:"btn btn-success btn-sm" %>
 <% else %>
-  <%= button_to "Leave", status_path, method:"get", class:"btn btn-danger"%>
+  <%= button_to "Leave", status_path, method:"get", class:"btn btn-danger btn-sm"%>
 <% end %>
 
 
 
-<%= button_to "All Parking Spots", parkingspots_path, method:"get", class:"btn-secondary" %>
-<%= button_to "Home", '/', method:"get", class:"btn-secondary" %>
-
+<%= button_to "All Parking Spots", parkingspots_path, method:"get", class:"btn-secondary btn-sm" %>
+<%= button_to "Home", '/', method:"get", class:"btn-secondary btn-sm" %>
 </div>
