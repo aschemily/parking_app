@@ -1,9 +1,9 @@
 <h1>Available Parking </h1>
 
-<div class="show-cards">
+<div class="cards">
 
 <% @parkingspots.each do |parkingspot| %>
-<div class="show-card" style="width: 18rem;">
+<div class="card" style="width: 18rem;">
 
   <div class="card-title">Street Address:</div>
   <div class="card-subtitle"><%=  parkingspot.street_address %></div>
@@ -25,9 +25,6 @@
 
 
 <%= button_to "Select Spot", parkingspot_path(parkingspot), method:"get", class:"btn-secondary btn-sm" %>
-<% end %>
-
-
 </div>
-
+<% end %>
 </div>
